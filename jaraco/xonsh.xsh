@@ -391,3 +391,7 @@ def work_on(args):
 	by_len = sorted(matches, key=len)
 	cd @(by_len[0])
 aliases['work-on'] = work_on
+
+
+# workaround for https://github.com/xonsh/xonsh/issues/5173
+__import__('xonsh.xonfig').xonfig.WELCOME_MSG = []
