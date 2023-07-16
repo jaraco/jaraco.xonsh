@@ -11,12 +11,6 @@ Welcome to |project| documentation!
    history
 
 
-.. automodule:: jaraco.xonsh
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 Indices and tables
 ==================
 
