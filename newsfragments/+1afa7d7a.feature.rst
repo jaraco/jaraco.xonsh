@@ -1,1 +1,0 @@
-Added the more general aliases and environment variables from my mac profile.
