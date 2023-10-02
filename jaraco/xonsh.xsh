@@ -8,7 +8,21 @@ import sys
 import shutil
 
 $XONSH_HISTORY_SIZE = '1 gig'
+$TOXENV = 'py'
+$ABODE_USERNAME = 'jaraco@jaraco.com'
+$PROJECTS_LIST_URL = 'https://www.dropbox.com/s/g16c8w9i7lg9dqn/projects.txt?dl=1'
 
+$PATH.insert(0, '~/.local/bin')
+$PATH.append('~/code/MestreLion/git-tools')
+
+aliases['git-id'] = 'git rev-parse --short HEAD'
+aliases['gpo'] = 'git push --set-upstream origin @$(git rev-parse --abbrev-ref HEAD)'
+aliases['gpj'] = 'git push --set-upstream jaraco @$(git rev-parse --abbrev-ref HEAD)'
+
+aliases['hobgoblins'] = "git commit -a -m '👹 Feed the hobgoblins (delint).'"
+aliases['fade-to-black'] = "git commit -a -m '⚫ Fade to black.'"
+aliases['genuflect'] = "git commit -a -m '🧎‍♀️ Genuflect to the types.'"
+aliases['toil-the-docs'] = "git commit -a -m '🚡 Toil the docs.'"
 
 try:
 	import jaraco.clipboard
