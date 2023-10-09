@@ -14,6 +14,7 @@ $PROJECTS_LIST_URL = 'https://www.dropbox.com/s/g16c8w9i7lg9dqn/projects.txt?dl=
 
 $PATH.insert(0, '~/.local/bin')
 $PATH.append('~/code/MestreLion/git-tools')
+$PATH.append('~/code/gob/depot_tools')
 
 aliases['git-id'] = 'git rev-parse --short HEAD'
 aliases['gpo'] = 'git push --set-upstream origin @$(git rev-parse --abbrev-ref HEAD)'
