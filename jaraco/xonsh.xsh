@@ -6,6 +6,7 @@ import zipfile
 import io
 import sys
 import shutil
+import re
 
 $XONSH_HISTORY_SIZE = '1 gig'
 $TOXENV = 'py'
@@ -410,3 +411,24 @@ aliases['work-on'] = work_on
 
 # workaround for https://github.com/xonsh/xonsh/issues/5173
 __import__('xonsh.xonfig').xonfig.WELCOME_MSG = []
+
+
+def re_log(args):
+	"""
+	Reflect the recent commit message in a news fragment.
+	"""
+	try:
+		type, = args
+	except ValueError:
+		type = 'feature'
+	msg = $(git log -1 --oneline --format=%s)
+	(descr, *rest) = msg.splitlines()
+	try:
+		number = re.search(r'#\d+', msg).group(0)
+	except AttributeError:
+		number = '+'
+	towncrier create -c @(descr.strip().rstrip('.') + '.') @(number).@(type).rst
+	git add newsfragments
+	git commit --amend --no-edit
+
+aliases['re-log'] = re_log
