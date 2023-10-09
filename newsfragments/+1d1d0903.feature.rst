@@ -1,1 +1,0 @@
-Add depot_tools to $PATH.

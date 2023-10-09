@@ -1,1 +1,0 @@
-Add re-log command to extract the last git commit and save it in as a changelog entry.
