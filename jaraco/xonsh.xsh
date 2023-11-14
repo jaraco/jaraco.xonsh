@@ -13,9 +13,8 @@ $TOXENV = 'py'
 $ABODE_USERNAME = 'jaraco@jaraco.com'
 $PROJECTS_LIST_URL = 'https://www.dropbox.com/s/g16c8w9i7lg9dqn/projects.txt?dl=1'
 
-$PATH.insert(0, '~/.local/bin')
-$PATH.append('~/code/MestreLion/git-tools')
-$PATH.append('~/code/gob/depot_tools')
+$PATH.add('~/code/MestreLion/git-tools')
+$PATH.add('~/code/gob/depot_tools')
 
 aliases['git-id'] = 'git rev-parse --short HEAD'
 aliases['gpo'] = 'git push --set-upstream origin @$(git rev-parse --abbrev-ref HEAD)'
@@ -39,7 +38,7 @@ profile = os.path.expanduser('~/Dropbox/config/mac/profile')
 if os.path.isfile(profile) and platform.system() != 'Windows':
 	source-bash @(profile)
 
-$PATH.add(pathlib.Path('~/.local/bin').expanduser(), front=True)
+$PATH.add('~/.local/bin', front=True)
 
 # allow for local settings in ~/.local/xonsh.d
 for localf in pathlib.Path('~/.local/xonsh.d').expanduser().glob('*'):
