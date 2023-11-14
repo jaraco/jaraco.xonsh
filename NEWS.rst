@@ -1,3 +1,12 @@
+v0.3.1
+======
+
+Bugfixes
+--------
+
+- Only prepend ~/.local/bin after the path helper to ensure it is ahead of the other paths.
+
+
 v0.3.0
 ======
 

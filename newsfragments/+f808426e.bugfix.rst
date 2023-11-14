@@ -1,1 +1,0 @@
-Only prepend ~/.local/bin after the path helper to ensure it is ahead of the other paths.
