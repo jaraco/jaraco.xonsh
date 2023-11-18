@@ -107,6 +107,7 @@ add_mfa('heroku-mfa', 'Heroku MFA', 'jaraco@jaraco.com')
 add_mfa('global-shares-mfa', 'Global Shares Equity MFA', 'jaraco')
 add_mfa('namecheap-mfa', 'Namecheap MFA', 'jaraco')
 add_mfa('google-mfa', 'Google MFA', 'jaraco@jaraco.com')
+add_mfa('twitter-mfa', 'Twitter MFA', 'jaraco')
 
 aliases.update(gclip='pbcopy', pclip='pbpaste')
 
