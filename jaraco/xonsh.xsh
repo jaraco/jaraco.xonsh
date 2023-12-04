@@ -424,7 +424,7 @@ def re_log(args):
 	msg = $(git log -1 --oneline --format=%s)
 	(descr, *rest) = msg.splitlines()
 	try:
-		number = re.search(r'#\d+', msg).group(0)
+		number = re.search(r'#(\d+)', msg).group(1)
 	except AttributeError:
 		number = '+'
 	towncrier create -c @(descr.strip().rstrip('.') + '.') @(number).@(type).rst
