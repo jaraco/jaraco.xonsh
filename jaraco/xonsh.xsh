@@ -11,7 +11,7 @@ import re
 $XONSH_HISTORY_SIZE = '1 gig'
 $TOXENV = 'py'
 $ABODE_USERNAME = 'jaraco@jaraco.com'
-$PROJECTS_LIST_URL = 'https://www.dropbox.com/s/g16c8w9i7lg9dqn/projects.txt?dl=1'
+$PROJECTS_LIST_URL = 'https://raw.githubusercontent.com/jaraco/dotfiles/main/projects.txt'
 
 $PATH.add('~/code/MestreLion/git-tools')
 $PATH.add('~/code/gob/depot_tools')
