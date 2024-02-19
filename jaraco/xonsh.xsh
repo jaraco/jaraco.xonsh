@@ -390,7 +390,7 @@ aliases['teslacam-sync'] = _teslacam_sync
 __import__('warnings').filterwarnings('ignore', 'There is no current event loop', DeprecationWarning, 'prompt_toolkit.application.application')
 
 
-aliases['firefox-liam'] = 'open -n -a Firefox.app --args --no-remote --profile "~/Google Drive/My Drive/AppData/Firefox/Profiles/8uzbw0yb.Liam"'
+aliases['firefox-liam'] = 'open -n -a Firefox.app --args --no-remote --profile "~/Dropbox/AppData/Firefox/Profiles/8uzbw0yb.Liam"'
 
 
 if !(which brew):
