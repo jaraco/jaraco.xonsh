@@ -9,7 +9,7 @@ import shutil
 import re
 
 $XONSH_HISTORY_SIZE = '1 gig'
-$TOXENV = 'py'
+$TOX_ENV = 'py'
 $ABODE_USERNAME = 'jaraco@jaraco.com'
 $PROJECTS_LIST_URL = 'https://raw.githubusercontent.com/jaraco/dotfiles/main/projects.txt'
 
