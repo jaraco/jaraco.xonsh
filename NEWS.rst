@@ -1,3 +1,9 @@
+v0.3.4
+======
+
+No significant changes.
+
+
 v0.3.3
 ======
 
