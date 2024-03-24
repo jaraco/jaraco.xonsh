@@ -1,1 +1,0 @@
-Slack implements 2FA on a per-workspace arrangement (yuck!).

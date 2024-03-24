@@ -1,3 +1,12 @@
+v0.4.1
+======
+
+Bugfixes
+--------
+
+- Slack implements 2FA on a per-workspace arrangement (yuck!).
+
+
 v0.4.0
 ======
 
