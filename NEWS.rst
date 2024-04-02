@@ -1,3 +1,12 @@
+v0.5.0
+======
+
+Features
+--------
+
+- Use another command to get the whole message.
+
+
 v0.4.1
 ======
 
