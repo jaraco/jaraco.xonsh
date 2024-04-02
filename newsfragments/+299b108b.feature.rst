@@ -1,0 +1,1 @@
+Use another command to get the whole message.

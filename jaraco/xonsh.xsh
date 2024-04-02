@@ -422,7 +422,7 @@ def re_log(args):
 		type, = args
 	except ValueError:
 		type = 'feature'
-	msg = $(git log -1 --oneline --format=%s)
+	msg = $(git log -1 --pretty=format:%B)
 	(descr, *rest) = msg.splitlines()
 	try:
 		number = re.search(r'#(\d+)', msg).group(1)
