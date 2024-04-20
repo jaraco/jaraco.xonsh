@@ -25,6 +25,8 @@ aliases['fade-to-black'] = "git commit -a -m '⚫ Fade to black.'"
 aliases['genuflect'] = "git commit -a -m '🧎‍♀️ Genuflect to the types.'"
 aliases['toil-the-docs'] = "git commit -a -m '🚡 Toil the docs.'"
 
+aliases['check-traps'] = 'pip-run jaraco.home -- -m jaraco.home.check-traps'
+
 try:
 	import jaraco.clipboard
 except ImportError:
