@@ -1,3 +1,12 @@
+v0.5.2
+======
+
+Bugfixes
+--------
+
+- Ensure at least the PATH is retained for shutil.which/subprocess.
+
+
 v0.5.1
 ======
 

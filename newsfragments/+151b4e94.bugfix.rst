@@ -1,1 +1,0 @@
-Ensure at least the PATH is retained for shutil.which/subprocess.
