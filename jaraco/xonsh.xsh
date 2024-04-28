@@ -435,3 +435,8 @@ def re_log(args):
 	git commit --amend --no-edit
 
 aliases['re-log'] = re_log
+
+
+# workaround for https://github.com/xonsh/xonsh/issues/3207
+if '/.local/bin' not in os.environ['PATH']:
+	os.environ['PATH'] = os.pathsep.join($PATH)
