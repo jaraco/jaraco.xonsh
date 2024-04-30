@@ -63,6 +63,10 @@ jobs:
         run: python -m pip install tox
       - name: Run
         run: tox
+        env:
+          # workaround for jaraco/jaraco.xonsh#1
+          TOX_OVERRIDE: testenv.pass_env+=PYTEST_ADDOPTS
+          PYTEST_ADDOPTS: -p no:xonsh
 
   collateral:
     strategy:
@@ -84,6 +88,10 @@ jobs:
         run: python -m pip install tox
       - name: Eval ${{ matrix.job }}
         run: tox -e ${{ matrix.job }}
+        env:
+          # workaround for jaraco/jaraco.xonsh#1
+          TOX_OVERRIDE: testenv.pass_env+=PYTEST_ADDOPTS
+          PYTEST_ADDOPTS: -p no:xonsh
 
   check:  # This job does nothing and is only used for the branch protection
     if: always()
