@@ -443,6 +443,6 @@ if '/.local/bin' not in os.environ['PATH']:
 
 
 def gemini(args):
-	prompt, = args
-	http https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent x-goog-api-key:@(keyring.get_password('https://generativelanguage.googleapis.com/', 'jaraco@jaraco.com')) contents[0][role]=user 'contents[0][parts][][text]=@(prompt)' | jq -r .candidates[0].content.parts[0].text
+	prompt = ' '.join(args)
+	http https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent x-goog-api-key:@(keyring.get_password('https://generativelanguage.googleapis.com/', 'jaraco@jaraco.com')) contents[0][role]=user f'contents[0][parts][][text]={prompt}' | jq -r .candidates[0].content.parts[0].text
 aliases['gemini'] = gemini
