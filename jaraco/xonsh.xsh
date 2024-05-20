@@ -440,3 +440,9 @@ aliases['re-log'] = re_log
 # workaround for https://github.com/xonsh/xonsh/issues/3207
 if '/.local/bin' not in os.environ['PATH']:
 	os.environ['PATH'] = os.pathsep.join($PATH)
+
+
+def gemini(args):
+	prompt, = args
+	http https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent x-goog-api-key:@(keyring.get_password('https://generativelanguage.googleapis.com/', 'jaraco@jaraco.com')) contents[0][role]=user 'contents[0][parts][][text]=@(prompt)' | jq -r .candidates[0].content.parts[0].text
+aliases['gemini'] = gemini
