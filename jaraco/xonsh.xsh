@@ -49,7 +49,7 @@ for localf in pathlib.Path('~/.local/xonsh.d').expanduser().glob('*'):
 
 import keyring
 
-$PROMPT = '{env_name:{} }{cwd_base}{branch_color}{curr_branch: {}}{RESET} {BOLD_BLUE}{prompt_end}{RESET} '
+$PROMPT = '{env_name:{} }{cwd_base}{branch_color}{curr_branch: {}}{RESET} {RED}{last_return_code_if_nonzero:[{BOLD_INTENSE_RED}{}{RED}] }{RESET}{BOLD_BLUE}{prompt_end}{RESET} '
 
 def remove_mercurial_metadata():
 	git rm .hg*
