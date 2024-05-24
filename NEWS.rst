@@ -1,3 +1,12 @@
+v0.7.0
+======
+
+Features
+--------
+
+- Include in the prompt the last return code if nonzero.
+
+
 v0.5.2
 ======
 
