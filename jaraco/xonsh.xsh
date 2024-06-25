@@ -14,7 +14,6 @@ $ABODE_USERNAME = 'jaraco@jaraco.com'
 $PROJECTS_LIST_URL = 'https://raw.githubusercontent.com/jaraco/dotfiles/main/projects.txt'
 
 $PATH.add('~/code/MestreLion/git-tools')
-$PATH.add('~/code/gob/depot_tools')
 
 aliases['git-id'] = 'git rev-parse --short HEAD'
 aliases['gpo'] = 'git push --set-upstream origin @$(git rev-parse --abbrev-ref HEAD)'
