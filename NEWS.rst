@@ -1,3 +1,12 @@
+v0.8.0
+======
+
+Features
+--------
+
+- Remove aliases for working with Travis.
+
+
 v0.7.0
 ======
 
