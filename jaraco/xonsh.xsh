@@ -127,44 +127,6 @@ def get_repo_url():
 	return raw.replace('https://github.com/', '')
 
 
-def switch_env(pw):
-	"""
-	Does the .travis.yml need the environment variable treatment?
-	If so, wrap the password in the environment variable.
-
-	https://github.com/pypa/warehouse/issues/6422#issuecomment-523355317
-	"""
-	uses_env = 'password:' not in pathlib.Path('.travis.yml').read_text()
-	if not uses_env:
-		print("Using simple password (without env)")
-		return pw
-	return 'TWINE_PASSWORD="' + pw + '"'
-
-def gen_pypi_token():
-	pw = switch_env($(keyring get https://upload.pypi.org/legacy/ __token__).rstrip())
-	crypt_pw = $(echo @(pw) | travis encrypt -r @(get_repo_url())).rstrip().strip('"')
-	jaraco.clipboard.copy(crypt_pw)
-
-aliases['gen-pypi-token'] = gen_pypi_token
-
-
-def install_pypi_token():
-	$TWINE_PASSWORD=keyring.get_password('https://upload.pypi.org/legacy/', '__token__')
-	assert $TWINE_PASSWORD
-	travis env copy -r @(get_repo_url()) TWINE_PASSWORD
-
-aliases['install-pypi-token'] = install_pypi_token
-
-
-aliases['travis-login'] = 'travis login --github-token @(keyring.get_password("Github", "jaraco"))'
-
-
-def install_tidelift_token():
-	$TIDELIFT_TOKEN=keyring.get_password('https://api.tidelift.com/external-api/', 'jaraco')
-	travis env copy -r @(get_repo_url()) TIDELIFT_TOKEN
-
-aliases['install-tidelift-token'] = install_tidelift_token
-
 def get_aws_pw(account_id):
 	url = f'https://{account_id}.signin.aws.amazon.com/console'
 	return keyring.get_password(url, $USER)
