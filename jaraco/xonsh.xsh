@@ -342,8 +342,8 @@ aliases['mongo-jaraco'] = _mongo_jaraco
 def _teslacam_sync():
 	assert pathlib.Path('/Volumes/Shares').is_dir()
 	rsync -rt --progress --info progress2 /Volumes/MEGAMI/TeslaCam /Volumes/Shares/archive
-	if __xonsh__.history.rtns[-1] == 0:
-		rm -r /Volumes/MEGAMI/TeslaCam/*
+	if __xonsh__.last.rtn == 0:
+		rm -rf /Volumes/MEGAMI/TeslaCam/*
 
 
 aliases['teslacam-sync'] = _teslacam_sync
