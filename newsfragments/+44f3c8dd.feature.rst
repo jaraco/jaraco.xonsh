@@ -1,0 +1,1 @@
+Update teslacam-sync to work on minamoto.

@@ -340,9 +340,8 @@ aliases['mongo-jaraco'] = _mongo_jaraco
 
 
 def _teslacam_sync():
-	# connect_share('archive')
-	# rsync -rt --progress --info progress2 /Volumes/MEGAMI/TeslaCam /Volumes/archive
-	rsync -rt --progress --info progress2 /Volumes/MEGAMI/TeslaCam tanuki.local:/shares/archive
+	assert pathlib.Path('/Volumes/Shares').is_dir()
+	rsync -rt --progress --info progress2 /Volumes/MEGAMI/TeslaCam /Volumes/Shares/archive
 	if _.rtn == 0:
 		rm -r /Volumes/MEGAMI/TeslaCam/*
 
