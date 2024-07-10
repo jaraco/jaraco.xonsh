@@ -1,3 +1,12 @@
+v0.9.0
+======
+
+Features
+--------
+
+- Update teslacam-sync to work on minamoto.
+
+
 v0.8.0
 ======
 
