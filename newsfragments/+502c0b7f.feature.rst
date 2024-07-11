@@ -1,1 +1,0 @@
-Prefer a unicode shell for the shell prompt.

@@ -1,3 +1,12 @@
+v0.10.0
+=======
+
+Features
+--------
+
+- Prefer a unicode shell for the shell prompt.
+
+
 v0.9.1
 ======
 
