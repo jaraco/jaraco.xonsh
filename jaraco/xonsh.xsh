@@ -1,12 +1,13 @@
-import os
+import contextlib
 import functools
-import platform
-import pathlib
-import zipfile
 import io
-import sys
-import shutil
+import os
+import pathlib
+import platform
 import re
+import shutil
+import sys
+import zipfile
 
 $XONSH_HISTORY_SIZE = '1 gig'
 $TOX_ENV = 'py'
@@ -41,6 +42,12 @@ if platform.system() == 'Darwin':
 profile = os.path.expanduser('~/Dropbox/config/mac/profile')
 if os.path.isfile(profile) and platform.system() != 'Windows':
 	source-bash @(profile)
+
+# workaround for xonsh/xonsh#5650
+with contextlib.suppress(ImportError):
+	from jaraco.windows.api import console
+	console.set_history_info()
+
 
 $PATH.add('~/.local/bin', front=True)
 

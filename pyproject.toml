@@ -21,6 +21,7 @@ dependencies = [
 	"jaraco.clipboard",
 	"keyring",
 	"xontrib-vox",
+	"jaraco.windows >= 5.9; platform_system=='Windows'",
 ]
 dynamic = ["version"]
 
