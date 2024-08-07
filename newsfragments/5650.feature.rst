@@ -1,1 +1,0 @@
-Set the console history info to more than 4 buffers.

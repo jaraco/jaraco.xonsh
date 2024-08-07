@@ -1,3 +1,12 @@
+v0.11.0
+=======
+
+Features
+--------
+
+- Set the console history info to more than 4 buffers. (#5650)
+
+
 v0.10.0
 =======
 
