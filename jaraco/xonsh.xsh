@@ -416,3 +416,17 @@ def gemini(args):
 	prompt = ' '.join(args)
 	http https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent x-goog-api-key:@(keyring.get_password('https://generativelanguage.googleapis.com/', 'jaraco@jaraco.com')) contents[0][role]=user f'contents[0][parts][][text]={prompt}' | jq -r .candidates[0].content.parts[0].text
 aliases['gemini'] = gemini
+
+
+# workaround for https://github.com/xonsh/xonsh/issues/5701
+
+for alias in aliases.values():
+	try:
+		assert alias[0] == os.environ['COMSPEC'], f'{alias[0]} != {os.environ["COMSPEC"]}'
+		alias[0] = f'{os.environ["SYSTEMROOT"]}\\System32\\cmd.exe'
+	except (AssertionError, IndexError, TypeError, KeyError) as exc:
+		pass
+
+if 'xonsh' in os.environ.get('COMSPEC', ''):
+	# restore COMSPEC so .cmd files execute under subprocess
+	os.environ['COMSPEC'] = f'{os.environ["SYSTEMROOT"]}\\System32\\cmd.exe'
