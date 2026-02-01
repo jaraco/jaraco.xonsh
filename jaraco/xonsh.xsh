@@ -122,6 +122,7 @@ add_mfa('twitter-mfa', 'Twitter MFA', 'jaraco')
 add_mfa('tea-slack-mfa', 'Tea Slack MFA', 'jaraco@jaraco.com')
 add_mfa('sfasu-mfa', 'Stephen F. Austin State University MFA', 'jaraco@jaraco.com')
 add_mfa('ba-mfa', 'British Airways MFA', 'jaraco@jaraco.com')
+add_mfa('goodcloud-mfa', 'Goodcloud MFA', 'jaraco')
 
 if platform.system() == 'Darwin':
 	aliases.update(gclip='pbcopy', pclip='pbpaste')
