@@ -53,7 +53,7 @@ $PATH.add('~/.local/bin', front=True)
 
 # allow for local settings in ~/.local/xonsh.d
 for localf in pathlib.Path('~/.local/xonsh.d').expanduser().glob('*'):
-	source @(localf)
+	source -e @(localf)
 
 
 import keyring
